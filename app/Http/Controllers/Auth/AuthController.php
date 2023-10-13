@@ -65,17 +65,28 @@ class AuthController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function rediraectToGoogle()
     {
-        //
+        return Socialit::driver('google')->rediraect();
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function handleCallbak()
     {
-        //
+        try {
+
+            $user =  Socialite::driver('google')->user();
+            $finduser = User::where('social_id', $user->id)->first();
+            if($finduser) {
+                Auth::login($finduser);
+
+                return response('success');
+            }
+        }catch(\Exception $e) {
+
+        }
     }
 
     /**

@@ -1,0 +1,131 @@
+import * as React from "react";
+import CssBaseline from "@mui/material/CssBaseline";
+import Container from "@mui/material/Container";
+import {
+  Card,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Select,
+} from "@mui/material";
+// import "./styles.css";
+import Input from "../../components/input/Input";
+import { useState } from "react";
+import InputWeight from "../../components/input/InputWeight";
+// Start with the default function FirestWeigth ===============>>
+export default function FirestWeigth() {
+  const [value, setValue] = useState({
+    name: "",
+    email: "",
+    password: "",
+    password_confirmation: "",
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setValue((prevValues) => ({ ...prevValues, [name]: value }));
+  };
+
+  async function handleSubmit(ev) {
+    ev.preventDefault();
+    console.log(value);
+  }
+
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <Container maxWidth="lg">
+        <Card style={{ background: "#eee" }}>
+          <form onSubmit={handleSubmit}>
+            <FormControl sx={{ p: 5, minWidth: 470 }}>
+              <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <InputWeight value={value} onChange={handleChange} />
+                </Grid>
+                <Grid item xs={6}>
+                  <Input
+                    isLabel="sssssss"
+                    name="name"
+                    value={value}
+                    onChange={handleChange}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <Input
+                    isLabel="sssssss"
+                    name="name"
+                    value={value}
+                    onChange={handleChange}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <Input
+                    isLabel="sssssss"
+                    name="name"
+                    value={value}
+                    onChange={handleChange}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <Input
+                    isLabel="sssssss"
+                    name="name"
+                    value={value}
+                    onChange={handleChange}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <Input
+                    isLabel="sssssss"
+                    name="name"
+                    value={value}
+                    onChange={handleChange}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <Input
+                    isLabel="sssssss"
+                    name="name"
+                    value={value}
+                    onChange={handleChange}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <FormControl
+                    sx={{ minWidth: 120 }}
+                    size="small"
+                    style={{ width: "100%" }}
+                  >
+                    <InputLabel id="demo-select-small-label">Age</InputLabel>
+                    <Select label="Age" value={value} onChange={handleChange}>
+                      <MenuItem value={10}>Empty</MenuItem>
+                      <MenuItem value={20}>Full</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+                <Grid item xs={6}>
+                  <FormControl
+                    sx={{ minWidth: 120 }}
+                    size="small"
+                    style={{ width: "100%" }}
+                  >
+                    <Select
+                      label="Age"
+                      value={value}
+                      onChange={handleChange}
+                      style={{ width: "100%" }}
+                    >
+                      <MenuItem value={10}>Issued</MenuItem>
+                      <MenuItem value={20}>Incoming</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+              </Grid>
+            </FormControl>
+          </form>
+        </Card>
+      </Container>
+    </React.Fragment>
+  );
+}

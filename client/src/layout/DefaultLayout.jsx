@@ -99,12 +99,11 @@ export default function DefaultLayout() {
     setOpen(false);
   };
 
-  const title = "Weights";
+  const title = "Employee Reports";
   // tab and linkes
   const Tabs = [
-    { name: "Firest Weigth", link: "/" },
-    { name: "Second Weigth", link: "/second-weigth" },
-    { name: "Complete Weight", link: "/complete-firest-weight" },
+    { name: "Fingerprint", link: "/" },
+    { name: "Today's Report", link: "/to-day-reporte" },
   ];
   return (
     <Box sx={{ display: "flex" }}>

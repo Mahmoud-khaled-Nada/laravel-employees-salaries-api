@@ -3,9 +3,9 @@ import DefaultLayout from "./layout/DefaultLayout";
 import AuthLayout from "./layout/AuthLayout";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
-import FirestWeigth from "./pages/weigthe/FirestWeigth";
-import SecondWeigth from "./pages/weigthe/SecondWeigth";
-import CompleteWeight from "./pages/weigthe/CompleteWeight";
+import Fingerprint from "./pages/Fingerprint/Fingerprint";
+import ToDayReporte from "./pages/reports/ToDayReporte";
+
 
 const router = createBrowserRouter([
   {
@@ -18,15 +18,11 @@ const router = createBrowserRouter([
       // },
       {
         path: "/",
-        element: <FirestWeigth />,
+        element: <Fingerprint />,
       },
       {
-        path: "/second-weigth/:id",
-        element: <SecondWeigth />,
-      },
-      {
-        path: "/complete-firest-weight",
-        element: <CompleteWeight />,
+        path: "/to-day-reporte",
+        element: <ToDayReporte />,
       },
     ],
   },

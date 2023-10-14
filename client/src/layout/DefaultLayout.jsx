@@ -1,8 +1,5 @@
 import { styled, useTheme } from "@mui/material/styles";
-import { Link, Outlet, Navigate } from "react-router-dom";
-import {useStateContext} from "../utils/context/ContextProvider";
-// import {_api} from "../utils/api";
-// import {useEffect} from "react";
+import { Link, Outlet } from "react-router-dom";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
@@ -90,17 +87,9 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-
-
 export default function DefaultLayout() {
-    const theme = useTheme();
-    const [open, setOpen] = useState(false);
-    const {token} = useStateContext();
-
-    if (!token) {
-      return <Navigate to="/login"/>
-    }
-
+  const theme = useTheme();
+  const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
